@@ -105,9 +105,11 @@ for record in metafiction:
 
 favourite_authors = DataFrame(favourite_author_list)
 favourite_authors.set_index("author", inplace=True)
+favourite_authors = favourite_authors["favourite_author"]
 
 favourite_stories = DataFrame(favourite_story_list)
 favourite_stories.set_index("author", inplace=True)
+favourite_stories = favourite_stories["favourite_story"]
 
 # <markdowncell>
 
