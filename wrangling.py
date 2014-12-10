@@ -49,6 +49,10 @@ authors.set_index(["author"], inplace=True)
 
 len(authors)
 
+# <codecell>
+
+authors.ix[[0]]
+
 # <markdowncell>
 
 # ## stories
@@ -82,6 +86,10 @@ stories["updated"] = stories["updated"].astype("datetime64")
 
 len(stories)
 
+# <codecell>
+
+stories.ix[[0]]
+
 # <markdowncell>
 
 # ## favourites
@@ -111,6 +119,14 @@ favourite_stories = DataFrame(favourite_story_list)
 favourite_stories.set_index("author", inplace=True)
 favourite_stories = favourite_stories["favourite_story"]
 
+# <codecell>
+
+favourite_authors.ix[[0]]
+
+# <codecell>
+
+favourite_stories.ix[[0]]
+
 # <markdowncell>
 
 # ## genres and categories
@@ -126,4 +142,12 @@ categories = DataFrame(data=np.zeros((len(stories), len(category_list))), column
 for story in stories.index:
     genres.ix[story, stories.ix[story, "genres"]] = 1
     categories.ix[story, stories.ix[story, "categories"]] = 1
+
+# <codecell>
+
+genres.ix[[0]]
+
+# <codecell>
+
+categories.ix[[0]]
 
